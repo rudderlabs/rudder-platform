@@ -1,1 +1,1 @@
-# rudder-utils
+# rudder-platform
