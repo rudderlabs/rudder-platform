@@ -10,7 +10,7 @@ import (
 	"github.com/golang/mock/gomock"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	mock_logger "github.com/rudderlabs/rudder-utils/utils/logger"
+	mock_logger "github.com/rudderlabs/rudder-utils/logger"
 	mock_sysUtils "github.com/rudderlabs/rudder-utils/utils/sysUtils"
 )
 
