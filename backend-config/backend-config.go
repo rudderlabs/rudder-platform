@@ -232,7 +232,7 @@ func loadConfig(configList ...interface{}) {
 	configFromFile = config.configFromFile
 	maxRegulationsPerRequest = config.maxRegulationsPerRequest
 	configEnvReplacementEnabled = config.configEnvReplacementEnabled
-	diagnostics.loadConfig(config.configDiagnostics)
+	diagnostics.LoadConfig(config.configDiagnostics)
 	pkgLogger = logger.NewLogger(config.configLogger).Child("backend-config")
 	stats.Setup(config.configStats)
 	errorFilePath = config.errorFilePath
