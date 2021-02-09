@@ -12,8 +12,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rudderlabs/rudder-platform/admin"
-
 	"github.com/rudderlabs/rudder-utils/diagnostics"
 	"github.com/rudderlabs/rudder-utils/stats"
 
@@ -198,9 +196,9 @@ type backendConfigSetup struct {
 	maxRegulationsPerRequest    int
 	configEnvReplacementEnabled bool
 	errorFilePath               string
-	configLogger                ConfigLogger
-	configStats                 ConfigStats
-	configDiagnostics           ConfigDiagnostics
+	configLogger                logger.ConfigLogger
+	configStats                 stats.ConfigStats
+	configDiagnostics           diagnostics.ConfigDiagnostics
 }
 
 var DefaultBackendConfigSetup = backendConfigSetup{isMultiWorkspace: false, multiWorkspaceSecret: "password", configBackendUrl: "https://api.rudderlabs.com", workSpaceToken: "", regulationsPollInterval: 300 * time.Second, configJSONPath: "/etc/rudderstack/workspaceConfig.json", configFromFile: false, maxRegulationsPerRequest: 1000, configEnvReplacementEnabled: true, errorFilePath: "/tmp/error_store.json", configLogger: logger.DefaultConfigLogger, configStats: stats.DefaultConfigStats, configDiagnostics: diagnostics.DefaultConfigDiagnostics}
@@ -483,7 +481,7 @@ func Setup(pollRegulations bool, configEnvHandler types.ConfigEnvI) {
 		startRegulationPolling()
 	}
 
-	admin.RegisterAdminHandler("BackendConfig", &BackendConfigAdmin{})
+	//admin.RegisterAdminHandler("BackendConfig", &BackendConfigAdmin{})
 }
 
 // startRegulationPolling - starts enterprise backend regulations polling
