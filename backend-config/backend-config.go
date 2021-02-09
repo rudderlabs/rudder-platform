@@ -461,7 +461,9 @@ func (bc *CommonBackendConfig) WaitForConfig() {
 // Setup backend config
 
 //Setup ... LoadConfig and Setup or Call Setup and initialise LoadConfig in this
-func Setup(pollRegulations bool, configEnvHandler types.ConfigEnvI) {
+func Setup(pollRegulations bool, configEnvHandler types.ConfigEnvI, configList ...interface{}) {
+	loadConfig(configList)
+
 	if isMultiWorkspace {
 		backendConfig = new(MultiWorkspaceConfig)
 	} else {
