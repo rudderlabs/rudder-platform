@@ -184,32 +184,32 @@ type CommonBackendConfig struct {
 	configEnvHandler types.ConfigEnvI
 }
 
-type backendConfigSetup struct {
-	isMultiWorkspace            bool
-	multiWorkspaceSecret        string
-	configBackendUrl            string
-	workSpaceToken              string
-	pollInterval                time.Duration
-	regulationsPollInterval     time.Duration
-	configJSONPath              string
-	configFromFile              bool
-	maxRegulationsPerRequest    int
-	configEnvReplacementEnabled bool
-	errorFilePath               string
-	configLogger                logger.ConfigLogger
-	configStats                 stats.ConfigStats
-	configDiagnostics           diagnostics.ConfigDiagnostics
+type BackendConfigSetup struct {
+	IsMultiWorkspace            bool
+	MultiWorkspaceSecret        string
+	ConfigBackendUrl            string
+	WorkSpaceToken              string
+	PollInterval                time.Duration
+	RegulationsPollInterval     time.Duration
+	ConfigJSONPath              string
+	ConfigFromFile              bool
+	MaxRegulationsPerRequest    int
+	ConfigEnvReplacementEnabled bool
+	ErrorFilePath               string
+	ConfigLogger                logger.ConfigLogger
+	ConfigStats                 stats.ConfigStats
+	ConfigDiagnostics           diagnostics.ConfigDiagnostics
 }
 
-var DefaultBackendConfigSetup = backendConfigSetup{isMultiWorkspace: false, multiWorkspaceSecret: "password", configBackendUrl: "https://api.rudderlabs.com", workSpaceToken: "", regulationsPollInterval: 300 * time.Second, configJSONPath: "/etc/rudderstack/workspaceConfig.json", configFromFile: false, maxRegulationsPerRequest: 1000, configEnvReplacementEnabled: true, errorFilePath: "/tmp/error_store.json", configLogger: logger.DefaultConfigLogger, configStats: stats.DefaultConfigStats, configDiagnostics: diagnostics.DefaultConfigDiagnostics}
+var DefaultBackendConfigSetup = BackendConfigSetup{IsMultiWorkspace: false, MultiWorkspaceSecret: "password", ConfigBackendUrl: "https://api.rudderlabs.com", WorkSpaceToken: "", RegulationsPollInterval: 300 * time.Second, ConfigJSONPath: "/etc/rudderstack/workspaceConfig.json", ConfigFromFile: false, MaxRegulationsPerRequest: 1000, ConfigEnvReplacementEnabled: true, ErrorFilePath: "/tmp/error_store.json", ConfigLogger: logger.DefaultConfigLogger, ConfigStats: stats.DefaultConfigStats, ConfigDiagnostics: diagnostics.DefaultConfigDiagnostics}
 
-func checkAndValidateConfig(configList []interface{}) backendConfigSetup {
+func checkAndValidateConfig(configList []interface{}) BackendConfigSetup {
 	if len(configList) != 1 {
 		return DefaultBackendConfigSetup
 	}
 	switch configList[0].(type) {
-	case backendConfigSetup:
-		return configList[0].(backendConfigSetup)
+	case BackendConfigSetup:
+		return configList[0].(BackendConfigSetup)
 	default:
 		return DefaultBackendConfigSetup
 	}
@@ -219,23 +219,23 @@ func loadConfig(configList ...interface{}) {
 
 	config := checkAndValidateConfig(configList)
 	// Rudder supporting multiple workspaces. false by default
-	isMultiWorkspace = config.isMultiWorkspace
+	isMultiWorkspace = config.IsMultiWorkspace
 	// Secret to be sent in basic auth for supporting multiple workspaces. password by default
-	multiWorkspaceSecret = config.multiWorkspaceSecret
+	multiWorkspaceSecret = config.MultiWorkspaceSecret
 
-	configBackendURL = config.configBackendUrl
-	workspaceToken = config.workSpaceToken
+	configBackendURL = config.ConfigBackendUrl
+	workspaceToken = config.WorkSpaceToken
 
-	pollInterval = config.pollInterval
-	regulationsPollInterval = config.regulationsPollInterval
-	configJSONPath = config.configJSONPath
-	configFromFile = config.configFromFile
-	maxRegulationsPerRequest = config.maxRegulationsPerRequest
-	configEnvReplacementEnabled = config.configEnvReplacementEnabled
-	diagnostics.LoadConfig(config.configDiagnostics)
-	pkgLogger = logger.NewLogger(config.configLogger).Child("backend-config")
-	stats.Setup(config.configStats)
-	errorFilePath = config.errorFilePath
+	pollInterval = config.PollInterval
+	regulationsPollInterval = config.RegulationsPollInterval
+	configJSONPath = config.ConfigJSONPath
+	configFromFile = config.ConfigFromFile
+	maxRegulationsPerRequest = config.MaxRegulationsPerRequest
+	configEnvReplacementEnabled = config.ConfigEnvReplacementEnabled
+	diagnostics.LoadConfig(config.ConfigDiagnostics)
+	pkgLogger = logger.NewLogger(config.ConfigLogger).Child("backend-config")
+	stats.Setup(config.ConfigStats)
+	errorFilePath = config.ErrorFilePath
 }
 
 func MakePostRequest(url string, endpoint string, data interface{}) (response []byte, ok bool) {
