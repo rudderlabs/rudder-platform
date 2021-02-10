@@ -44,13 +44,13 @@ var (
 	configEnvReplacementEnabled           bool
 	errorFilePath                         string
 	configEnvHandler                      types.ConfigEnvI
+	Diagnostics                           diagnostics.DiagnosticsI
 
 	//DefaultBackendConfig will be initialized be Setup to either a WorkspaceConfig or MultiWorkspaceConfig.
 	DefaultBackendConfig BackendConfig
-	Http                 sysUtils.HttpI           = sysUtils.NewHttp()
-	pkgLogger            logger.LoggerI           = logger.NewLogger(logger.DefaultConfigLogger).Child("backend-config")
-	IoUtil               sysUtils.IoUtilI         = sysUtils.NewIoUtil()
-	Diagnostics          diagnostics.DiagnosticsI = diagnostics.Diagnostics
+	Http                 sysUtils.HttpI   = sysUtils.NewHttp()
+	pkgLogger            logger.LoggerI   = logger.NewLogger(logger.DefaultConfigLogger).Child("backend-config")
+	IoUtil               sysUtils.IoUtilI = sysUtils.NewIoUtil()
 )
 
 var Eb utils.PublishSubscriber = new(utils.EventBus)
@@ -211,6 +211,7 @@ func checkAndValidateConfig(configList []interface{}) BackendConfigSetup {
 	case BackendConfigSetup:
 		return configList[0].(BackendConfigSetup)
 	default:
+
 		return DefaultBackendConfigSetup
 	}
 }
@@ -236,6 +237,8 @@ func loadConfig(configList ...interface{}) {
 	pkgLogger = logger.NewLogger(config.ConfigLogger).Child("backend-config")
 	stats.Setup(config.ConfigStats)
 	errorFilePath = config.ErrorFilePath
+
+	Diagnostics = diagnostics.Diagnostics
 }
 
 func MakePostRequest(url string, endpoint string, data interface{}) (response []byte, ok bool) {
@@ -461,8 +464,8 @@ func (bc *CommonBackendConfig) WaitForConfig() {
 // Setup backend config
 
 //Setup ... LoadConfig and Setup or Call Setup and initialise LoadConfig in this
-func Setup(pollRegulations bool, configEnvHandler types.ConfigEnvI, configList ...interface{}) {
-	loadConfig(configList)
+func Setup(pollRegulations bool, configEnvHandler types.ConfigEnvI, configList ...interface{}) BackendConfig {
+	loadConfig(configList...)
 
 	if isMultiWorkspace {
 		backendConfig = new(MultiWorkspaceConfig)
@@ -484,6 +487,8 @@ func Setup(pollRegulations bool, configEnvHandler types.ConfigEnvI, configList .
 	}
 
 	//admin.RegisterAdminHandler("BackendConfig", &BackendConfigAdmin{})
+
+	return backendConfig
 }
 
 // startRegulationPolling - starts enterprise backend regulations polling
