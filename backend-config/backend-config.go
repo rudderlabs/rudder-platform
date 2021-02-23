@@ -201,7 +201,7 @@ type BackendConfigSetup struct {
 	ConfigDiagnostics           diagnostics.ConfigDiagnostics
 }
 
-var DefaultBackendConfigSetup = BackendConfigSetup{IsMultiWorkspace: false, MultiWorkspaceSecret: "password", ConfigBackendUrl: "https://api.rudderlabs.com", WorkSpaceToken: "", RegulationsPollInterval: 300 * time.Second, ConfigJSONPath: "/etc/rudderstack/workspaceConfig.json", ConfigFromFile: false, MaxRegulationsPerRequest: 1000, ConfigEnvReplacementEnabled: true, ErrorFilePath: "/tmp/error_store.json", ConfigLogger: logger.DefaultConfigLogger, ConfigStats: stats.DefaultConfigStats, ConfigDiagnostics: diagnostics.DefaultConfigDiagnostics}
+var DefaultBackendConfigSetup = BackendConfigSetup{IsMultiWorkspace: false, MultiWorkspaceSecret: "password", ConfigBackendUrl: "https://api.rudderlabs.com", WorkSpaceToken: "", RegulationsPollInterval: 300 * time.Second, PollInterval: 5 * time.Second, ConfigJSONPath: "/etc/rudderstack/workspaceConfig.json", ConfigFromFile: false, MaxRegulationsPerRequest: 1000, ConfigEnvReplacementEnabled: true, ErrorFilePath: "/tmp/error_store.json", ConfigLogger: logger.DefaultConfigLogger, ConfigStats: stats.DefaultConfigStats, ConfigDiagnostics: diagnostics.DefaultConfigDiagnostics}
 
 func checkAndValidateConfig(configList []interface{}) BackendConfigSetup {
 	if len(configList) != 1 {
