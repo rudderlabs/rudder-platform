@@ -1,0 +1,26 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "github.com/rudderlabs/rudder-server/proto";
+
+service SourceLiveEvents{
+  rpc fetchSourceLiveEvents( fetchSourceLiveEventsRequest ) returns ( stream fetchSourceLiveEventsResponse );
+  rpc stopSourceLiveEvents( stopSourceLiveEventsRequest ) returns ( stopSourceLiveEventsResponse );
+}
+
+
+message stopSourceLiveEventsRequest {
+
+}
+
+message stopSourceLiveEventsResponse {
+
+}
+
+message fetchSourceLiveEventsRequest {
+  string sourceId = 1;
+}
+
+message fetchSourceLiveEventsResponse {
+  repeated string events = 1;
+}

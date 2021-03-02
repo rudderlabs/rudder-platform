@@ -1,0 +1,224 @@
+# github.com/araddon/dateparse v0.0.0-20210207001429-0eec95c9db7e
+## explicit
+github.com/araddon/dateparse
+# github.com/bugsnag/bugsnag-go v2.1.0+incompatible
+## explicit
+github.com/bugsnag/bugsnag-go
+github.com/bugsnag/bugsnag-go/device
+github.com/bugsnag/bugsnag-go/errors
+github.com/bugsnag/bugsnag-go/headers
+github.com/bugsnag/bugsnag-go/sessions
+# github.com/bugsnag/panicwrap v1.3.1
+## explicit
+github.com/bugsnag/panicwrap
+# github.com/cenkalti/backoff v2.2.1+incompatible
+## explicit
+github.com/cenkalti/backoff
+# github.com/fsnotify/fsnotify v1.4.7
+github.com/fsnotify/fsnotify
+# github.com/gofrs/uuid v4.0.0+incompatible
+## explicit
+github.com/gofrs/uuid
+# github.com/golang/protobuf v1.4.3
+## explicit
+github.com/golang/protobuf/proto
+github.com/golang/protobuf/ptypes
+github.com/golang/protobuf/ptypes/any
+github.com/golang/protobuf/ptypes/duration
+github.com/golang/protobuf/ptypes/timestamp
+# github.com/hashicorp/go-cleanhttp v0.5.1
+github.com/hashicorp/go-cleanhttp
+# github.com/hashicorp/go-retryablehttp v0.6.8
+## explicit
+github.com/hashicorp/go-retryablehttp
+# github.com/hashicorp/hcl v1.0.0
+github.com/hashicorp/hcl
+github.com/hashicorp/hcl/hcl/ast
+github.com/hashicorp/hcl/hcl/parser
+github.com/hashicorp/hcl/hcl/printer
+github.com/hashicorp/hcl/hcl/scanner
+github.com/hashicorp/hcl/hcl/strconv
+github.com/hashicorp/hcl/hcl/token
+github.com/hashicorp/hcl/json/parser
+github.com/hashicorp/hcl/json/scanner
+github.com/hashicorp/hcl/json/token
+# github.com/joho/godotenv v1.3.0
+## explicit
+github.com/joho/godotenv
+# github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0
+## explicit
+github.com/kardianos/osext
+# github.com/lib/pq v1.9.0
+## explicit
+github.com/lib/pq
+github.com/lib/pq/oid
+github.com/lib/pq/scram
+# github.com/magiconair/properties v1.8.1
+github.com/magiconair/properties
+# github.com/mitchellh/mapstructure v1.1.2
+github.com/mitchellh/mapstructure
+# github.com/pelletier/go-toml v1.2.0
+github.com/pelletier/go-toml
+# github.com/pkg/errors v0.8.1
+github.com/pkg/errors
+# github.com/rudderlabs/analytics-go v3.3.1+incompatible
+## explicit
+github.com/rudderlabs/analytics-go
+# github.com/rudderlabs/rudder-utils v1.0.11
+## explicit
+github.com/rudderlabs/rudder-utils/diagnostics
+github.com/rudderlabs/rudder-utils/logger
+github.com/rudderlabs/rudder-utils/rruntime
+github.com/rudderlabs/rudder-utils/stats
+github.com/rudderlabs/rudder-utils/utils
+github.com/rudderlabs/rudder-utils/utils/misc
+github.com/rudderlabs/rudder-utils/utils/sysUtils
+github.com/rudderlabs/rudder-utils/utils/types
+# github.com/satori/go.uuid v1.2.0
+## explicit
+github.com/satori/go.uuid
+# github.com/segmentio/backo-go v0.0.0-20200129164019-23eae7c10bd3
+## explicit
+github.com/segmentio/backo-go
+# github.com/spf13/afero v1.1.2
+github.com/spf13/afero
+github.com/spf13/afero/mem
+# github.com/spf13/cast v1.3.1
+## explicit
+github.com/spf13/cast
+# github.com/spf13/jwalterweatherman v1.0.0
+github.com/spf13/jwalterweatherman
+# github.com/spf13/pflag v1.0.3
+github.com/spf13/pflag
+# github.com/spf13/viper v1.7.1
+## explicit
+github.com/spf13/viper
+# github.com/subosito/gotenv v1.2.0
+github.com/subosito/gotenv
+# github.com/thoas/go-funk v0.7.0
+## explicit
+github.com/thoas/go-funk
+# github.com/tidwall/gjson v1.6.8
+## explicit
+github.com/tidwall/gjson
+# github.com/tidwall/match v1.0.3
+github.com/tidwall/match
+# github.com/tidwall/pretty v1.0.2
+github.com/tidwall/pretty
+# github.com/xtgo/uuid v0.0.0-20140804021211-a0b114877d4c
+## explicit
+github.com/xtgo/uuid
+# go.uber.org/atomic v1.4.0
+go.uber.org/atomic
+# go.uber.org/multierr v1.1.0
+go.uber.org/multierr
+# go.uber.org/zap v1.10.0
+go.uber.org/zap
+go.uber.org/zap/buffer
+go.uber.org/zap/internal/bufferpool
+go.uber.org/zap/internal/color
+go.uber.org/zap/internal/exit
+go.uber.org/zap/zapcore
+# golang.org/x/net v0.0.0-20190620200207-3b0461eec859
+golang.org/x/net/http/httpguts
+golang.org/x/net/http2
+golang.org/x/net/http2/hpack
+golang.org/x/net/idna
+golang.org/x/net/internal/timeseries
+golang.org/x/net/trace
+# golang.org/x/sys v0.0.0-20190624142023-c5567b49c5d0
+golang.org/x/sys/unix
+# golang.org/x/text v0.3.2
+golang.org/x/text/secure/bidirule
+golang.org/x/text/transform
+golang.org/x/text/unicode/bidi
+golang.org/x/text/unicode/norm
+# google.golang.org/genproto v0.0.0-20200526211855-cb27e3aa2013
+google.golang.org/genproto/googleapis/rpc/status
+# google.golang.org/grpc v1.36.0
+## explicit
+google.golang.org/grpc
+google.golang.org/grpc/attributes
+google.golang.org/grpc/backoff
+google.golang.org/grpc/balancer
+google.golang.org/grpc/balancer/base
+google.golang.org/grpc/balancer/grpclb/state
+google.golang.org/grpc/balancer/roundrobin
+google.golang.org/grpc/binarylog/grpc_binarylog_v1
+google.golang.org/grpc/codes
+google.golang.org/grpc/connectivity
+google.golang.org/grpc/credentials
+google.golang.org/grpc/encoding
+google.golang.org/grpc/encoding/proto
+google.golang.org/grpc/grpclog
+google.golang.org/grpc/internal
+google.golang.org/grpc/internal/backoff
+google.golang.org/grpc/internal/balancerload
+google.golang.org/grpc/internal/binarylog
+google.golang.org/grpc/internal/buffer
+google.golang.org/grpc/internal/channelz
+google.golang.org/grpc/internal/credentials
+google.golang.org/grpc/internal/envconfig
+google.golang.org/grpc/internal/grpclog
+google.golang.org/grpc/internal/grpcrand
+google.golang.org/grpc/internal/grpcsync
+google.golang.org/grpc/internal/grpcutil
+google.golang.org/grpc/internal/metadata
+google.golang.org/grpc/internal/resolver
+google.golang.org/grpc/internal/resolver/dns
+google.golang.org/grpc/internal/resolver/passthrough
+google.golang.org/grpc/internal/resolver/unix
+google.golang.org/grpc/internal/serviceconfig
+google.golang.org/grpc/internal/status
+google.golang.org/grpc/internal/syscall
+google.golang.org/grpc/internal/transport
+google.golang.org/grpc/internal/transport/networktype
+google.golang.org/grpc/keepalive
+google.golang.org/grpc/metadata
+google.golang.org/grpc/peer
+google.golang.org/grpc/resolver
+google.golang.org/grpc/serviceconfig
+google.golang.org/grpc/stats
+google.golang.org/grpc/status
+google.golang.org/grpc/tap
+# google.golang.org/protobuf v1.25.0
+## explicit
+google.golang.org/protobuf/encoding/prototext
+google.golang.org/protobuf/encoding/protowire
+google.golang.org/protobuf/internal/descfmt
+google.golang.org/protobuf/internal/descopts
+google.golang.org/protobuf/internal/detrand
+google.golang.org/protobuf/internal/encoding/defval
+google.golang.org/protobuf/internal/encoding/messageset
+google.golang.org/protobuf/internal/encoding/tag
+google.golang.org/protobuf/internal/encoding/text
+google.golang.org/protobuf/internal/errors
+google.golang.org/protobuf/internal/fieldsort
+google.golang.org/protobuf/internal/filedesc
+google.golang.org/protobuf/internal/filetype
+google.golang.org/protobuf/internal/flags
+google.golang.org/protobuf/internal/genid
+google.golang.org/protobuf/internal/impl
+google.golang.org/protobuf/internal/mapsort
+google.golang.org/protobuf/internal/pragma
+google.golang.org/protobuf/internal/set
+google.golang.org/protobuf/internal/strs
+google.golang.org/protobuf/internal/version
+google.golang.org/protobuf/proto
+google.golang.org/protobuf/reflect/protoreflect
+google.golang.org/protobuf/reflect/protoregistry
+google.golang.org/protobuf/runtime/protoiface
+google.golang.org/protobuf/runtime/protoimpl
+google.golang.org/protobuf/types/known/anypb
+google.golang.org/protobuf/types/known/durationpb
+google.golang.org/protobuf/types/known/timestamppb
+# gopkg.in/alexcesaro/statsd.v2 v2.0.0
+## explicit
+gopkg.in/alexcesaro/statsd.v2
+# gopkg.in/ini.v1 v1.51.0
+gopkg.in/ini.v1
+# gopkg.in/natefinch/lumberjack.v2 v2.0.0
+## explicit
+gopkg.in/natefinch/lumberjack.v2
+# gopkg.in/yaml.v2 v2.2.4
+gopkg.in/yaml.v2
